@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huerta Inteligente Infantil</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Huerta Inteligente Infantil</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#fases">Fases del Proyecto</a></li>
+            <li><a href="#seleccion">Selecciona tu Planta</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenidos</h2>
+            <p>Este proyecto busca que los niños aprendan sobre el cuidado de las plantas a través de tecnología y educación.</p>
+            <img src="FTHUERTA.jpg" alt="Imagen de la huerta inteligente">
+        </section>
+        <section id="fases">
+            <h2>Fases del Proyecto</h2>
+            <ul>
+                <li><strong>1° fase:</strong> Preparación del suelo y selección de semillas.</li>
+                <li><strong>2° fase:</strong> Instalación de sensores de humedad y luz.</li>
+                <li><strong>3° fase:</strong> Monitoreo del crecimiento de las plantas.</li>
+            </ul>
+        </section>
+        <section id="seleccion">
+            <h2>Selecciona la planta que deseas sembrar</h2>
+            <select id="plantSelector" onchange="mostrarPlanta()">
+                <option value="">-- Selecciona una planta --</option>
+                <option value="mango">Mango</option>
+                <option value="guayaba">Guayaba</option>
+                <option value="guanabana">Guanábana</option>
+                <option value="limon">Limón</option>
+                <option value="marañon">Marañón</option>
+                <option value="nispero">Níspero</option>
+                <option value="coco">Coco</option>
+                <option value="naranja">Naranja</option>
+                <option value="caimito">Caimito</option>
+                <option value="aguacate">Aguacate</option>
+            </select>
+            <div class="plants">
+                <div class="plant" id="plantImage" style="display: none;">
+                    <img id="selectedPlantImg" src="" alt="Planta seleccionada">
+                    <p id="selectedPlantName"></p>
+                    <p id="selectedPlantInfo"></p> <!-- Información adicional -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Proyecto de Huerta Inteligente. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function mostrarPlanta() {
+            let plant = document.getElementById("plantSelector").value;
+
+            let plantImages = {
+                mango: "FTMANGO.jpg",
+                guayaba: "FTGUAYABA.jpeg",
+                guanabana: "FTGUANABANA.jpg",
+                limon: "FTLIMON.jpg",
+                marañon: "FTMARAÑON.png",
+                nispero: "FTNISPERO.jpg",
+                coco: "FTCOCO.webp",
+                naranja: "FTNARANJA.webp",
+                caimito: "FTCAIMITO.jpg",
+                aguacate: "FTAGUACATE.jpg"
+            };
+
+            let plantInfo = {
+                mango: "El mango es una fruta tropical dulce y rica en vitaminas A y C.",
+                guayaba: "La guayaba es una fruta con alto contenido de fibra y vitamina C.",
+                guanabana: "La guanábana es conocida por su pulpa blanca y su sabor dulce y ácido.",
+                limon: "El limón es una fruta cítrica rica en vitamina C y antioxidantes.",
+                marañon: "El marañón produce la semilla del anacardo y su fruta es jugosa.",
+                nispero: "El níspero es una fruta dulce con alto contenido de fibra.",
+                coco: "El coco es una fruta tropical rica en agua y aceite beneficioso.",
+                naranja: "La naranja es una fruta cítrica popular por su vitamina C.",
+                caimito: "El caimito es una fruta tropical con pulpa dulce y jugosa.",
+                aguacate: "El aguacate es una fruta con alto contenido de grasas saludables."
+            };
+
+            if (plant && plantImages[plant]) {
+                document.getElementById("selectedPlantImg").src = plantImages[plant];
+                document.getElementById("selectedPlantImg").alt = plant;
+                document.getElementById("selectedPlantName").innerText = plant.charAt(0).toUpperCase() + plant.slice(1);
+                document.getElementById("selectedPlantInfo").innerText = plantInfo[plant] || "Información no disponible.";
+                document.getElementById("plantImage").style.display = "block";
+            } else {
+                document.getElementById("plantImage").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

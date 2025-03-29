@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    background-color: #111d35;
+    font-family: "Share Tech", sans-serif;
+}
+
+
+.logo_img {
+width: 100px;
+padding-left: 12px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 40px;
+    padding-right: 13%;
+    color: white;
+}
+
+nav {   
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+header {
+    position: absolute;
+    padding: 0 40px;
+    padding-top: 50px;
+    margin-top: 20px; 
+    text-align: justify;
+}
+
+header h1 {
+    font-size: 80px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+header .num {
+    font-weight: 900;
+}
+.img1 {
+    height: 400px;
+    position: absolute;
+    padding-left: 50%;
+}
+
+a {
+    color: white;
+}
+
+.contenedor{
+    display: flex; 
+    flex-wrap: wrap ;
+    justify-content: center; 
+    position: absolute;
+    padding-top: 40%;
+}
+
+.item {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+.pie{
+    text-align: center;
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin-top: 65%;
+}
